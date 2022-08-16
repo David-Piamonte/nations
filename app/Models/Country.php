@@ -25,4 +25,8 @@ class Country extends Model
         return $this->belongsToMany(Idioma::Class,
                                     'country_languages', 'country_id', 'language_id')->withPivot('official');
     }
+
+    public function Region(){
+        return $this->belongsTo(Region::class, 'region_id');
+    }
 }
